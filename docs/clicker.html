@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<header>
+<title>Pimp clicker</title>
+<script type="text/javascript" src="main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="cool.css">
+</header>
+<body>
+<button type="button" class="reset" onClick="delSave()">Reset</button>
+<button id="Clicker" onClick="inc(1); msgFeed('Gained ' + incc + '$');" type="button">CLICK THIS MAFKER!!</button>
+<p id="moneyy" class="para"></p>
+  <div class="progress">
+    <div id="progressBar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+      <p id="progress%"></p>
+    </div>
+  </div>
+</div>
+
+
+<table class="tableUpgrade">
+	<tr>
+		<th class="thUpgrade">Upgrades</th>
+		<th class="thUpgrade">Price</th>
+	</tr>
+	<tr class="trUpgrade" onClick="upgradeHobo()">
+		<td class="tdUpgrade"><b id="hoboUpgradeDesc"></b><br><small>Doubles hobo income</small></td>
+		<td class="tdUpgrade" id="hoboUpgradeCost"></td>
+	</tr>
+	<tr class="trUpgrade" onClick="upgradeNerd()">
+		<td class="tdUpgrade"><b id="nerdUpgradeDesc"></b><br><small>Doubles nerd income</small></td>
+		<td class="tdUpgrade" id="nerdUpgradeCost"></td>
+	</tr>
+	<tr class="trUpgrade" onClick="upgradeDonator()">
+		<td class="tdUpgrade"><b id="donatorUpgradeDesc"></b><br><small>Doubles donator income</small></td>
+		<td class="tdUpgrade" id="donatorUpgradeCost"></td>
+	</tr>
+	<tr class="trUpgrade" onClick="upgradeProstitude()">
+		<td class="tdUpgrade"><b id="prostitudeUpgradeDesc"></b><br><small>Doubles prostitude income</small></td>
+		<td class="tdUpgrade" id="prostitudeUpgradeCost"></td>
+	</tr>
+	<tr>
+		<th class="thFeed"></th>
+	</tr>
+</table>
+
+<table class="gambleTable">
+	<tr>
+		<th class="thGamble"> </th>
+	</tr>
+	<tr class="trGamble">
+		<td class="tdGamble">
+			<p id="gambleP"></p>
+			<button type="button" id="gambleID" class="gambleClass" onClick="gamble();">Gamble!</button>
+			<p>takes all your money and have a 50% chance of doubleing it</p>
+		</td>
+	</tr>
+	<tr>
+		<th class="thGamble"></th>
+	</tr>
+</table>
+
+<table class="tableFeed">
+	<tr>
+		<th class="thFeed">Feed</td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed1"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed2"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed3"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed4"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed5"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed6"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed7"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed8"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed9"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed10"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed11"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed12"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed13"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed14"></td>
+	</tr>
+	<tr class="trFeed">
+		<td class="tdFeed" id="Feed15"></td>
+	</tr>
+	<tr>
+		<th class="thFeed"></td>
+	</tr>
+</table>
+<table class="tableWorkers">
+  <tr>
+    <th class="thWorkers">Worker</th>
+    <th class="thWorkers">Description</th>
+    <th class="thWorkers">Price</th>
+	<th class="thWorkers">Amount</th>
+  </tr>
+  <tr class="Worker" onClick="buyWorker1(1)">
+    <td id="Worker1" class="tdWorkers">Hobo</td>
+    <td class="tdWorkers">Hire a hobo to give you money</td>
+    <td id="Worker1Cost" class="tdWorkers"></td>
+	<td id="Worker1Amount" class="tdWorkers"></td>
+  </tr>
+  <tr class="Worker" onClick="buyWorker2(1)">
+    <td id="Worker2" class="tdWorkers">Nerd</td>
+    <td class="tdWorkers">Hustle a nerd to give you his lunch money</td>
+    <td id="Worker2Cost" class="tdWorkers"></td>
+	<td id="Worker2Amount" class="tdWorkers"></td>
+	</tr>
+  <tr class="Worker" onClick="buyWorker3(1)">
+    <td id="Worker3" class="tdWorkers">Donater</td>
+    <td class="tdWorkers">Promise a stupid kid some diamonds for money</td>
+    <td id="Worker3Cost" class="tdWorkers"></td>
+	<td id="Worker3Amount" class="tdWorkers"></td>
+	</tr>
+  <tr class="Worker" onClick="buyWorker4(1)">
+    <td id="Worker4" class="tdWorkers">Prostitute</td>
+    <td class="tdWorkers">All yours! But she still takes money so its a baad idea...</td>
+    <td id="Worker4Cost" class="tdWorkers"></td>
+	<td id="Worker4Amount" class="tdWorkers"></td>
+	</tr>
+</table>
+<script>
+firstRun();
+</script>
+</body>
+</html>
